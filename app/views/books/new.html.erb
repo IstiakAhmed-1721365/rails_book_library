@@ -1,0 +1,26 @@
+<h1>New Book entry</h1>
+
+<%= form_for @book do |f| %>
+    <%= f.label :title %>  <br />
+    <%= f.text_field :title %> <br />
+    <% @book.errors.full_messages_for(:title).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+
+    <%= f.label :author %>  <br />
+    <%= f.text_field :author %> <br />
+    <% @book.errors.full_messages_for(:author).each do |message| %>
+        <div><%= message %></div>
+      <% end %>
+
+    <%= f.label :price %>  <br />
+    <%= f.text_field :price %> <br />
+
+    <%= f.label :publish_date %>  <br />
+    <%= f.text_field :publish_date %> <br />
+
+    <%= f.submit %>
+
+<% end %>
+
+<%= link_to "Book Index", books_path %>

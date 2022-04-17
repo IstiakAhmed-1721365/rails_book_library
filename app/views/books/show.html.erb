@@ -1,0 +1,14 @@
+<h1><%= @book.title %></h1>
+
+<p>Author: <%= @book.author %></p>
+<p>Price: <%= @book.price %> $ </p>
+<p>Publish Date: <%= @book.publish_date %></p>
+
+<ul>
+    <li><%= link_to "Update", edit_book_path %></li>
+
+    <li><%= link_to "Delete", book_path(@book), method: :delete, data: {confirm: "Are you sure?"} %></li>
+</ul>
+<%= link_to 'Back', books_path %>
+
+

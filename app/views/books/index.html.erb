@@ -1,0 +1,13 @@
+<h1>Book List</h1>
+
+<ul>
+  <% @list.each do |f| %>
+    <li>
+      <a href="/books/<%= f.id %>">
+        <%= f.title %> | <%= link_to 'Update', edit_book_path(f) %> | <%= link_to 'Delete', f, method: :delete, data: { confirm: 'Are you sure?' } %>
+      </a>
+    </li>
+  <% end %>
+</ul>
+
+<%= link_to "New Book", new_book_path %>
