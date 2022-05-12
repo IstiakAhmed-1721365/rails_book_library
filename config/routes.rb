@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
- resources :books
+  devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
+    resources :books
  #delete '/books/:id', to: 'book#destroy' 
- root to: "books#index"
+    root to: "books#index"
+
 end
